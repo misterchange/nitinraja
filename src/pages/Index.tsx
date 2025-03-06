@@ -5,6 +5,7 @@ import StatCard from '@/components/StatCard';
 import BlockchainButton from '@/components/BlockchainButton';
 import ContactButton from '@/components/ContactButton';
 import ProfileCard from '@/components/ProfileCard';
+import ProjectCard from '@/components/ProjectCard';
 import { 
   Layers, 
   Code, 
@@ -16,7 +17,8 @@ import {
   SmilePlus, 
   Timer, 
   Mail, 
-  MessageCircle
+  MessageCircle,
+  Briefcase
 } from 'lucide-react';
 
 const Index = () => {
@@ -110,6 +112,54 @@ const Index = () => {
               href="https://wa.me/1234567890"
             />
           </div>
+        </div>
+      </div>
+
+      {/* Projects Section - Bento Grid */}
+      <div className="mt-12 animate-fade-in delay-200">
+        <div className="flex items-center gap-2 mb-6">
+          <Briefcase className="text-blockchain-pink" size={20} />
+          <span className="text-gray-300">Featured Works</span>
+        </div>
+        <h2 className="text-3xl font-bold mb-8">My Projects</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <ProjectCard 
+            large={true}
+            title="NFT Marketplace" 
+            description="A complete NFT marketplace built on Ethereum allowing users to mint, buy, sell and trade digital assets with MetaMask integration."
+            image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
+            tags={["Solidity", "React", "Web3.js", "Ethereum"]}
+            link="#"
+          />
+          
+          <ProjectCard 
+            title="DeFi Yield Aggregator" 
+            description="Automated yield farming protocol that maximizes returns across multiple DeFi platforms."
+            tags={["Solidity", "JavaScript", "DeFi"]}
+            link="#"
+          />
+          
+          <ProjectCard 
+            title="Blockchain Voting System" 
+            description="Secure and transparent voting system built on blockchain technology."
+            tags={["Solidity", "Ethereum", "React"]}
+            link="#"
+          />
+          
+          <ProjectCard 
+            title="Cross-Chain Bridge" 
+            description="A bridge allowing assets to move between Ethereum and Solana blockchain networks."
+            tags={["Solidity", "Rust", "Cross-chain"]}
+            link="#"
+          />
+          
+          <ProjectCard 
+            title="DAO Governance" 
+            description="Decentralized autonomous organization with on-chain governance and voting."
+            tags={["Solidity", "React", "DAO"]}
+            link="#"
+          />
         </div>
       </div>
     </div>

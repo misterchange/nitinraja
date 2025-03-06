@@ -117,3 +117,16 @@
 .contact-button {
   @apply flex items-center gap-3 bg-blockchain-card p-4 rounded-xl transition-all hover:bg-blockchain-card-hover;
 }
+
+/* Animation delays for staggered animations */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}

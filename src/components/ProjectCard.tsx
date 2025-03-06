@@ -1,0 +1,68 @@
+
+import React from 'react';
+import { cn } from "@/lib/utils";
+import { GitBranch } from 'lucide-react';
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image?: string;
+  tags: string[];
+  link?: string;
+  className?: string;
+  large?: boolean;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ 
+  title, 
+  description, 
+  image, 
+  tags, 
+  link, 
+  className,
+  large = false
+}) => {
+  return (
+    <a 
+      href={link || "#"} 
+      className={cn(
+        "block bg-blockchain-card rounded-2xl p-6 transition-all hover:bg-blockchain-card-hover",
+        large ? "col-span-1 md:col-span-2 row-span-1 md:row-span-2" : "",
+        className
+      )}
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      {image && (
+        <div className="mb-4 overflow-hidden rounded-xl">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform hover:scale-105"
+          />
+        </div>
+      )}
+      
+      <h3 className="text-xl font-bold text-gray-200 mb-2">{title}</h3>
+      <p className="text-gray-400 mb-4 line-clamp-3">{description}</p>
+      
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tags.map((tag, index) => (
+          <span 
+            key={index} 
+            className="text-xs bg-blockchain-card-hover px-2 py-1 rounded-full text-gray-300"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      
+      <div className="flex items-center text-sm text-blockchain-pink">
+        <GitBranch size={16} className="mr-2" />
+        <span>View Project</span>
+      </div>
+    </a>
+  );
+};
+
+export default ProjectCard;
