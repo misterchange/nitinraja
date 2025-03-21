@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { GitBranch } from 'lucide-react';
@@ -26,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <a 
       href={link || "#"} 
       className={cn(
-        "block bg-blockchain-card rounded-2xl p-6 transition-all hover:bg-blockchain-card-hover",
+        "block bg-blockchain-card rounded-2xl p-6 border border-white/5",
         large ? "col-span-1 md:col-span-2 row-span-1 md:row-span-2" : "",
         className
       )}
@@ -38,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform hover:scale-105"
+            className="w-full h-full object-cover"
           />
         </div>
       )}
@@ -50,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {tags.map((tag, index) => (
           <span 
             key={index} 
-            className="text-xs bg-blockchain-card-hover px-2 py-1 rounded-full text-gray-300"
+            className="text-xs bg-[#141414] px-2 py-1 rounded-full text-gray-300 border border-white/5"
           >
             {tag}
           </span>

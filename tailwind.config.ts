@@ -56,7 +56,7 @@ export default {
 				blockchain: {
 					pink: '#e04cfa',
 					dark: '#111111',
-					card: '#1A1A1A',
+					card: '#101010',
 					'card-hover': '#222222',
 					gray: '#888888'
 				},
