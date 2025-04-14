@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, MapPin, Briefcase, GraduationCap, Mail, MessageCircle } from 'lucide-react';
 import nitinImage from '../Nitin.png';
 import TypewriterText from './TypewriterText';
@@ -6,7 +6,7 @@ import TypewriterText from './TypewriterText';
 interface ProfileCardProps {
   name: string;
   title: string;
-  specialty: string;
+  specialties: string[]; // Changed to array of strings
   location: string;
   position: string;
   education: string;
@@ -16,12 +16,27 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({
   name,
   title,
-  specialty,
+  specialties,
   location,
   position,
   education,
   resumeUrl = "#"
 }) => {
+  const [currentSpecialtyIndex, setCurrentSpecialtyIndex] = useState(0);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  // Rotate through specialties when typing is complete
+  useEffect(() => {
+    if (isTypingComplete && specialties.length > 1) {
+      const timer = setTimeout(() => {
+        setCurrentSpecialtyIndex((prevIndex) => (prevIndex + 1) % specialties.length);
+        setIsTypingComplete(false);
+      }, 2000); // Wait 2 seconds before changing specialty
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isTypingComplete, specialties.length]);
+
   return (
     <div className="bg-blockchain-card rounded-2xl p-6 border border-white/5 animate-fade-in">
       <div className="flex flex-col gap-7">
@@ -38,7 +53,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           
           <div className="flex-1">
             <div className="flex flex-col md:flex-row md:items-center justify-between">
-              <div className="flex items-center gap-3 mb-3 md:mb-0  bg-[#141414] px-2 py-1 rounded-xl border border-white/5">
+              <div className="flex items-center gap-3 mb-3 md:mb-0 bg-[#141414] px-2 py-1 rounded-xl border border-white/5">
                 <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 <span className="text-gray-300 text-sm">Available to work</span>
               </div>
@@ -47,7 +62,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
                 href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex  bg-[#141414] px-2 py-1 rounded-xl border border-white/5 items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                className="flex bg-[#141414] px-2 py-1 rounded-xl border border-white/5 items-center gap-2 text-gray-300 hover:text-white transition-colors"
               >
                 <span className="font-medium">Resume</span>
                 <Download size={18} />
@@ -57,24 +72,29 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             <h1 className="text-3xl font-semibold mt-2 mb-2">{name}</h1>
             
             <p className="text-xl mb-4">
-              {title} <span className="pink-accent"><TypewriterText text={specialty} /></span>
+              {title} <span className="pink-accent">
+                <TypewriterText 
+                  text={specialties[currentSpecialtyIndex]} 
+                  onComplete={() => setIsTypingComplete(true)}
+                />
+              </span>
             </p>
           </div>
         </div>
 
-        <div className="flex gap-3 ">
+        <div className="flex gap-3 flex-wrap">
           <div className="flex items-center gap-3 bg-[#141414] px-2 py-1 rounded-xl border border-white/5">
-            <MapPin size={18} className="text-blockchain-pink "  />
+            <MapPin size={18} className="text-blockchain-pink" />
             <span className="font-normal text-gray-300">{location}</span>
           </div>
           
           <div className="flex items-center gap-3 bg-[#141414] px-2 py-1 rounded-xl border border-white/5">      
-            <Briefcase size={18} className="text-blockchain-pink "  />
+            <Briefcase size={18} className="text-blockchain-pink" />
             <span className="font-normal text-gray-300">{position}</span>
           </div>
           
           <div className="flex items-center gap-3 bg-[#141414] px-2 py-1 rounded-xl border border-white/5">
-            <GraduationCap size={18}className="text-blockchain-pink "  />
+            <GraduationCap size={18} className="text-blockchain-pink" />
             <span className="font-normal text-gray-300">{education}</span>
           </div>
         </div>

@@ -106,11 +106,15 @@ const Index = () => {
             <StatCard number="03" label="Years" icon={<Timer size={18} className="text-blockchain-pink" />} />
           </div>
           
-          {/* Profile Card */}
+          {/* Profile Card with multiple specialties */}
           <ProfileCard 
             name="NitiN Raja"
-            title="I'm a Fullstack"
-            specialty="Blockchain Dev"
+            title="I'm a"
+            specialties={[
+              "Fullstack Blockchain Dev",
+              "Micro-Saas Founder",
+              "Curious Product Designer",
+            ]}
             location="Mumbai"
             position="Engineer"
             education="Mumbai University"
