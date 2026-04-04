@@ -128,8 +128,9 @@ const Index = () => {
           {/* Left Column Projects */}
           <div className="md:col-span-5 flex flex-col gap-4 -mt-3">
             <ProjectCard
-              title="SNIPE.VIDEO"
+              title="Snipe.Video"
               description="An AI-powered video editor that automates long-form to short-form content creation."
+              image="/snipe.png"
               tags={["AI", "Video Editor", "Shorts"]}
               link="https://www.snipe.video/"
             />
