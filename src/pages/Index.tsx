@@ -5,22 +5,22 @@ import BlockchainButton from '@/components/BlockchainButton';
 import ContactButton from '@/components/ContactButton';
 import ProfileCard from '@/components/ProfileCard';
 import ProjectCard from '@/components/ProjectCard';
-import { 
-  Layers, 
-  Code, 
-  HardDrive, 
-  Triangle, 
-  FileCode, 
-  Anchor, 
-  Flag, 
-  SmilePlus, 
-  Timer, 
-  Mail, 
+import {
+  Layers,
+  Code,
+  HardDrive,
+  Triangle,
+  FileCode,
+  Anchor,
+  Flag,
+  SmilePlus,
+  Timer,
+  Mail,
   MessageCircle,
   Briefcase,
   Blocks
 } from 'lucide-react';
-import {SiSolidity} from "react-icons/si";
+import { SiSolidity } from "react-icons/si";
 import { SiWeb3Dotjs } from "react-icons/si";
 import { FaHardHat } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
@@ -48,55 +48,54 @@ const Index = () => {
               <span className="text-gray-300 text-sm flex items-center justify-center">My Stacks</span>
             </div>
             <h2 className="text-xxl font-bold mb-6 flex items-center justify-center ">Tech Arsenal</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <TechCard icon={<SiSolidity/>} name="Solidity" />
-              <TechCard icon={<SiWeb3Dotjs />} name="Web3.js" />
-              <TechCard icon={<FaHardHat />} name="Hardhat" />
+              <TechCard icon={<Code />} name="Python" />
+              <TechCard icon={<Layers />} name="Typescript" />
+              <TechCard icon={<HardDrive />} name="React.js" />
               <TechCard icon={<SiNextdotjs />} name="Next.js" />
-              <TechCard icon={<RiJavascriptFill />} name="Javascript" />
-              <TechCard icon={<FaReact />} name="React.js" />
-              <TechCard icon={<FaRust />} name="Rust" />
-              <TechCard icon={<FaAnchor />} name="Anchor" />
+              <TechCard icon={<RiJavascriptFill />} name="Pytorch" />
+              <TechCard icon={<FaReact />} name="Tensorflow" />
+              <TechCard icon={<FileCode />} name="Vector dbs" />
+              <TechCard icon={<Blocks />} name="Langchain" />
             </div>
           </div>
-          
+
           {/* Blockchains Explored Section */}
           <div className="bg-blockchain-card rounded-2xl p-3 border border-white/5 animate-fade-in">
             <div className="flex items-center justify-center gap-2 mb-5">
-              <SiBlockchaindotcom size={20} className="text-blockchain-pink" />
-              <h2 className="text-sm font-normal">Blockchains Explored</h2>
+              <HardDrive size={20} className="text-blockchain-pink" />
+              <h2 className="text-sm font-normal">AI Architectures Explored</h2>
             </div>
-            
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                <SiBitcoinsv className="text-gray-300" />
-                <span  className="text-gray-300 font-mono">Bitcoin</span>
+
+            <div className="grid grid-cols-3 gap-2 w-full">
+              <div className="flex items-center justify-center bg-[#141414] px-1 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[10px] md:text-xs">Transformers</span>
               </div>
-              
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                  <FaEthereum className="text-gray-300 " />
-                <span className="text-gray-300 font-mono">Ethereum</span>
+
+              <div className="flex items-center justify-center bg-[#141414] px-1 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[10px] md:text-xs">Diffusion</span>
               </div>
-              
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                <SiSolana className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Solana</span>
+
+              <div className="flex items-center justify-center bg-[#141414] px-1 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[10px] md:text-xs">RAG</span>
               </div>
-              
-              <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
-                <LuHexagon className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Polygon</span>
+
+              <div className="flex items-center justify-center bg-[#141414] px-1 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[10px] md:text-xs">Distillation</span>
               </div>
-              
-              <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
-                <SiBinance className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Binance</span>
+
+              <div className="flex items-center justify-center bg-[#141414] px-0.5 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[9px] md:text-[11px] leading-tight">Reinforcement<br />Learning</span>
+              </div>
+
+              <div className="flex items-center justify-center bg-[#141414] px-0.5 py-1.5 rounded-xl border border-white/5 text-center h-full">
+                <span className="text-gray-300 font-mono text-[9px] md:text-[11px] leading-tight">Supervised<br />Fine-Tuning</span>
               </div>
             </div>
           </div>
         </div>
-        
+
         {/* Right Column */}
         <div className="lg:col-span-7 space-y-4">
           {/* Stats Row */}
@@ -105,13 +104,13 @@ const Index = () => {
             <StatCard number="10" label="Clients" icon={<SmilePlus size={18} className="text-blockchain-pink" />} />
             <StatCard number="03" label="Years" icon={<Timer size={18} className="text-blockchain-pink" />} />
           </div>
-          
+
           {/* Profile Card with multiple specialties */}
-          <ProfileCard 
+          <ProfileCard
             name="NitiN Raja"
             title="I'm a"
             specialties={[
-              "Fullstack Blockchain Dev",
+              "Fullstack AI Developer",
               "Micro-Saas Founder",
               "Curious Product Designer",
             ]}
@@ -126,41 +125,31 @@ const Index = () => {
       {/* Projects Section - Bento Grid */}
       <div className="mt-6 animate-fade-in delay-200">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-5 -mt-3">
-            <ProjectCard 
-              title="Blockchain Lottery System" 
-              description="Automated yield farming protocol that maximizes returns across multiple DeFi platforms."
-              tags={["Solidity", "JavaScript", "DeFi"]}
-              link="#"
+          {/* Left Column Projects */}
+          <div className="md:col-span-5 flex flex-col gap-4 -mt-3">
+            <ProjectCard
+              title="SNIPE.VIDEO"
+              description="An AI-powered video editor that automates long-form to short-form content creation."
+              tags={["AI", "Video Editor", "Shorts"]}
+              link="https://www.snipe.video/"
+            />
+            <ProjectCard
+              title="Runyard-AI Yard"
+              description="A vibe coding tool for Generating AI Models."
+              tags={["AI", "LLMs", "Generative"]}
+              link="https://www.runyard.dev/generate-models"
             />
           </div>
 
-          <div className="md:col-span-7 -mt-8">
-            <ProjectCard 
+          {/* Right Column */}
+          <div className="md:col-span-7 mt-0 md:-mt-12 lg:-mt-16">
+            <ProjectCard
               large={true}
-              title="Blockhub.dev" 
-              description="Blockhub.dev is an AI-powered code editor designed specifically for blockchain developers. It helps you generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other blockchains in seconds. Whether you're building DeFi protocols, NFTs, or dApps, Blockhub.dev streamlines your development workflow with instant AI-driven code suggestions and boilerplate generation."
-              image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
-              tags={["AI","Solidity", "Next.js", "Web3.js", "Ethereum","Wallet"]}
-              link="https://blockhub.dev"
-            />
-          </div>
-          
-          <div className="md:col-span-3 -mt-60">
-            <ProjectCard 
-              title="Blockhub-SDK" 
-              description="A software Development kit of Smart Contracts."
-              tags={["Solidity","Node.js"]}
-              link="https://blockhub.dev/smart-contracts"
-            />
-          </div>
-          
-          <div className="md:col-span-2 -mt-60">
-            <ProjectCard 
-              title="Wallet" 
-              description="A wallet directory."
-              tags={["React", ]}
-              link="https://blockhub.dev/wallets"
+              title="Runyard.dev"
+              description="Runyard helps you discover AI models that fit your machine. It detects your CPU, GPU, and memory, then recommends models that will run on your hardware or through providers. Browse the Model Radar to compare options, check requirements, and copy ready-to-run commands. Use Anchor API to call multiple model providers from a single port, and build and launch in AI Yard with guides and tooling."
+              image="/Runyar.dev.png"
+              tags={["AI", "LLMs", "Next.js", "PyTorch", "Transformers", "GPU"]}
+              link="https://www.runyard.dev/"
             />
           </div>
         </div>

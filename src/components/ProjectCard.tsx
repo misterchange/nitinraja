@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <a 
       href={link || "#"} 
       className={cn(
-        "block bg-blockchain-card rounded-2xl p-6 border border-white/5",
+        "group block bg-blockchain-card rounded-2xl p-6 border border-white/5 hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500",
         large ? "col-span-1 md:col-span-2 row-span-1 md:row-span-2" : "",
         className
       )}
@@ -33,17 +33,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       rel="noopener noreferrer"
     >
       {image && (
-        <div className="mb-4 overflow-hidden rounded-xl">
+        <div className="mb-4 overflow-hidden rounded-xl h-32 lg:h-40 relative w-full bg-black/20">
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out"
           />
         </div>
       )}
       
       <h3 className="text-xl font-bold text-gray-200 mb-2">{title}</h3>
-      <p className="text-gray-400 mb-4 line-clamp-3">{description}</p>
+      <p className="text-gray-400 mb-4 text-sm line-clamp-4">{description}</p>
       
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
