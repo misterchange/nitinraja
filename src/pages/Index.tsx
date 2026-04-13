@@ -23,24 +23,24 @@ import { FaReact } from "react-icons/fa";
 const failures = [
   {
     icon: <Skull size={20} className="text-blockchain-pink" />,
-    title: "DeFi Yield Protocol",
-    timeline: "2022 — 8 months",
-    what: "Built a cross-chain yield optimizer routing funds between Aave, Compound, and Curve. Launched a week before the Terra/LUNA collapse wiped 60% of DeFi TVL overnight.",
-    learned: "Market timing is not in your control. Ship faster, validate earlier.",
+    title: "Pulse Oximeter — Covid-19",
+    timeline: "2021",
+    what: "During Covid-19 when pulse oximeters were selling for $50–$100 and out of stock everywhere, I redesigned one from first principles — replacing the battery and display with a smartphone. Brought the cost down to ~$5 per unit.",
+    learned: "First-principles thinking can 20x a price problem. Hardware without distribution is just a prototype.",
   },
   {
     icon: <TrendingDown size={20} className="text-blockchain-pink" />,
-    title: "NFT Marketplace",
-    timeline: "2023 — 4 months",
-    what: "Spent 4 months building a curated NFT marketplace for indie artists. By launch, floor prices had cratered and gas fees made minting unviable for the target audience.",
-    learned: "Validate demand before building. A landing page would have told me in a week.",
+    title: "AntiTheft Helmet — Bounce",
+    timeline: "2022",
+    what: "Bounce, a Bangalore-based ride-sharing startup, was losing 500–700 helmets a day to theft. I built an anti-theft helmet using BLE and a buzzer — triggered an alarm when the helmet moved beyond a set radius. Went to pilot stage but never became a product.",
+    learned: "A working pilot isn't a product. Nailing the last-mile ops and unit economics matters as much as the tech.",
   },
   {
     icon: <Flame size={20} className="text-blockchain-pink" />,
-    title: "Over-Engineered SDK",
-    timeline: "2023 — 3 months",
-    what: "Abstracted a multi-chain wallet SDK with 40+ configuration options. No developer used it because the API surface was too complex. README ran to 8,000 words.",
-    learned: "Simplicity ships. If a dev needs to read 8,000 words, you failed the design.",
+    title: "Vibe Coding Tool — Blockchain",
+    timeline: "2023",
+    what: "Built a vibe coding environment specifically for blockchain developers — natural-language to smart contract, one-click deploy to testnets, live contract interaction in the browser. Technically solid, but the blockchain developer market was too niche to get meaningful traction.",
+    learned: "Market size kills niche tools. Great DX doesn't matter if there aren't enough people who feel the pain.",
   },
 ];
 
@@ -215,11 +215,12 @@ const Index = () => {
 
       {/* Failure / Battle Scars Section */}
       <div className="mt-10 animate-fade-in delay-300">
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-4 mb-2">
           <div className="h-px flex-1 bg-white/5" />
           <h2 className="text-sm font-normal text-gray-500 tracking-widest uppercase">Battle Scars</h2>
           <div className="h-px flex-1 bg-white/5" />
         </div>
+        <p className="text-center text-gray-600 text-xs tracking-wide mb-6">My Failed Ideas</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {failures.map((f, i) => (
