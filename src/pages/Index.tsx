@@ -150,6 +150,8 @@ const Index = () => {
               title="Snipe.Video"
               description="The operating system for podcasters. Paste a YouTube link and get 10 viral clips ranked by Hook, Energy, and Sentiment scores. Repurpose AI generates Twitter threads, LinkedIn posts, and newsletters from transcripts. Guest Scout recommends guests from trending social topics. Auto-publishes across Instagram, YouTube, TikTok, X, and LinkedIn at optimal engagement times. Pay-per-credit — no subscriptions."
               image="/snipe.png"
+              imageClassName="h-36 overflow-hidden"
+              imgClassName="scale-[2] object-contain"
               tags={["SaaS", "Next.js", "Razorpay", "Video"]}
               link="https://snipe.video"
             />
@@ -178,7 +180,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="md:col-span-7 md:-mt-[6cm]">
+          <div className="md:col-span-7 md:-mt-[1cm]">
             <ProjectCard
               large={true}
               title="Coderot.space"

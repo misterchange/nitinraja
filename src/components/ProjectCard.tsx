@@ -7,6 +7,7 @@ interface ProjectCardProps {
   description: string;
   image?: string;
   imageClassName?: string;
+  imgClassName?: string;
   tags: string[];
   link?: string;
   className?: string;
@@ -18,6 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   image,
   imageClassName,
+  imgClassName,
   tags,
   link,
   className,
@@ -39,25 +41,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover"
+            className={cn("w-full h-full object-cover", imgClassName)}
           />
         </div>
       )}
-      
+
       <h3 className="text-xl font-bold text-gray-200 mb-2">{title}</h3>
       <p className="text-gray-400 mb-4 line-clamp-3">{description}</p>
-      
+
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
-          <span 
-            key={index} 
+          <span
+            key={index}
             className="text-xs bg-[#141414] px-2 py-1 rounded-full text-gray-300 border border-white/5"
           >
             {tag}
           </span>
         ))}
       </div>
-      
+
       <div className="flex items-center text-sm text-blockchain-pink">
         <GitBranch size={16} className="mr-2" />
         <span>View Project</span>
