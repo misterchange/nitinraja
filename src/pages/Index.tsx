@@ -11,7 +11,11 @@ import {
   Skull,
   TrendingDown,
   Flame,
-  Database
+  Database,
+  Github,
+  Rocket,
+  Zap,
+  Lock
 } from 'lucide-react';
 import { SiPython, SiPytorch, SiTensorflow, SiLangchain, SiHuggingface, SiNextdotjs } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -137,8 +141,8 @@ const Index = () => {
             />
           </div>
 
-          {/* Row 2 — Blockhub.dev (col-5) | Coderot.space (col-7) */}
-          <div className="md:col-span-5 md:-mt-[0.6cm]">
+          {/* Row 2 — Blockhub.dev + Coming Soon (col-5) | Coderot.space (col-7) */}
+          <div className="md:col-span-5 md:-mt-[0.6cm] flex flex-col gap-4">
             <ProjectCard
               large={true}
               title="Blockhub.dev"
@@ -147,6 +151,52 @@ const Index = () => {
               tags={["Solidity", "Next.js", "Web3.js", "Ethereum"]}
               link="https://blockhub-mlbsadfef-nitinrajaofficialgmailcoms-projects.vercel.app/"
             />
+
+            {/* Coming Soon bento grid */}
+            <div className="grid grid-cols-6 gap-4 flex-1">
+
+              {/* Wide card */}
+              <a href="https://github.com/misterchange" target="_blank" rel="noopener noreferrer"
+                className="col-span-4 bg-blockchain-card rounded-2xl p-4 border border-dashed border-white/10 flex flex-col justify-between gap-3 hover:border-blockchain-pink/30 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Rocket size={14} className="text-blockchain-pink" />
+                  <span className="text-[10px] uppercase tracking-widest font-mono text-gray-500">Coming Soon</span>
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm font-medium">Stealth Project</p>
+                  <p className="text-gray-600 text-xs mt-1">Building something new — follow on GitHub</p>
+                </div>
+                <div className="flex items-center gap-1 text-blockchain-pink text-xs">
+                  <Github size={12} />
+                  <span className="font-mono">misterchange</span>
+                </div>
+              </a>
+
+              {/* Narrow card */}
+              <a href="https://github.com/misterchange" target="_blank" rel="noopener noreferrer"
+                className="col-span-2 bg-blockchain-card rounded-2xl p-4 border border-dashed border-white/10 flex flex-col items-center justify-center gap-2 hover:border-blockchain-pink/30 transition-colors">
+                <Lock size={18} className="text-blockchain-pink" />
+                <span className="text-[10px] uppercase tracking-widest font-mono text-gray-500 text-center">Under<br/>Wraps</span>
+              </a>
+
+              {/* Narrow card */}
+              <a href="https://github.com/misterchange" target="_blank" rel="noopener noreferrer"
+                className="col-span-2 bg-blockchain-card rounded-2xl p-4 border border-dashed border-white/10 flex flex-col items-center justify-center gap-2 hover:border-blockchain-pink/30 transition-colors">
+                <Zap size={18} className="text-blockchain-pink" />
+                <span className="text-[10px] uppercase tracking-widest font-mono text-gray-500 text-center">In<br/>Progress</span>
+              </a>
+
+              {/* Wide card */}
+              <a href="https://github.com/misterchange" target="_blank" rel="noopener noreferrer"
+                className="col-span-4 bg-blockchain-card rounded-2xl p-4 border border-dashed border-white/10 flex flex-col justify-between gap-3 hover:border-blockchain-pink/30 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Github size={14} className="text-blockchain-pink" />
+                  <span className="text-[10px] uppercase tracking-widest font-mono text-gray-500">More on GitHub</span>
+                </div>
+                <p className="text-gray-600 text-xs">New drops incoming — star the repo to stay notified</p>
+              </a>
+
+            </div>
           </div>
 
           <div className="md:col-span-7 md:-mt-[0.1cm]">
