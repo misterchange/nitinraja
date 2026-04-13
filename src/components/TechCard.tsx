@@ -13,7 +13,7 @@ const TechCard: React.FC<TechCardProps> = ({ icon, name, className }) => {
       <div className="bg-[#1a1a1a] p-3 rounded-lg">
         <div className="text-gray-400">{icon}</div>
       </div>
-      <span className="font-normal text-gray-300">{name}</span>
+      <span className="font-normal text-gray-300 text-sm">{name}</span>
     </div>
   );
 };
