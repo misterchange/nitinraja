@@ -12,15 +12,8 @@ import {
   TrendingDown,
   Flame
 } from 'lucide-react';
-import {SiSolidity} from "react-icons/si";
-import { SiWeb3Dotjs } from "react-icons/si";
-import { FaHardHat } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { RiJavascriptFill } from "react-icons/ri";
+import { SiPython, SiPytorch, SiTensorflow, SiOpenai, SiLangchain, SiHuggingface, SiNextdotjs, SiBlockchaindotcom } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import { FaRust } from "react-icons/fa";
-import { FaAnchor } from "react-icons/fa";
-import { SiBlockchaindotcom } from "react-icons/si";
 import { SiBitcoinsv } from "react-icons/si";
 import { FaEthereum } from "react-icons/fa";
 import { SiSolana } from "react-icons/si";
@@ -66,14 +59,14 @@ const Index = () => {
             <h2 className="text-xxl font-bold mb-6 flex items-center justify-center ">Tech Arsenal</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <TechCard icon={<SiSolidity/>} name="Solidity" />
-              <TechCard icon={<SiWeb3Dotjs />} name="Web3.js" />
-              <TechCard icon={<FaHardHat />} name="Hardhat" />
+              <TechCard icon={<SiPython />} name="Python" />
+              <TechCard icon={<SiPytorch />} name="PyTorch" />
+              <TechCard icon={<SiTensorflow />} name="TensorFlow" />
+              <TechCard icon={<SiOpenai />} name="OpenAI" />
+              <TechCard icon={<SiLangchain />} name="LangChain" />
+              <TechCard icon={<SiHuggingface />} name="Hugging Face" />
               <TechCard icon={<SiNextdotjs />} name="Next.js" />
-              <TechCard icon={<RiJavascriptFill />} name="Javascript" />
               <TechCard icon={<FaReact />} name="React.js" />
-              <TechCard icon={<FaRust />} name="Rust" />
-              <TechCard icon={<FaAnchor />} name="Anchor" />
             </div>
           </div>
 
