@@ -143,8 +143,8 @@ const Index = () => {
       <div className="mt-6 animate-fade-in delay-200">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
-          {/* Left column: Snipe.Video + small cards below */}
-          <div className="md:col-span-5 flex flex-col gap-4">
+          {/* Row 1 — Snipe.Video (col-5) | Runyard.dev (col-7) */}
+          <div className="md:col-span-5">
             <ProjectCard
               large={true}
               title="Snipe.Video"
@@ -153,26 +153,8 @@ const Index = () => {
               tags={["SaaS", "Next.js", "Razorpay", "Video"]}
               link="https://snipe.video"
             />
-
-            {/* Small cards below Snipe.Video */}
-            <div className="grid grid-cols-2 gap-4">
-              <ProjectCard
-                title="Blockhub.dev"
-                description="A code editor for blockchain developers. Generate smart contracts and deploy Web3 apps to Ethereum, Solana, and more in seconds."
-                tags={["Solidity", "Web3.js", "Ethereum"]}
-                link="https://blockhub-mlbsadfef-nitinrajaofficialgmailcoms-projects.vercel.app/"
-              />
-              <ProjectCard
-                title="Coderot.space"
-                description="Stop doom scrolling while your AI writes code. Coderot interrupts each save with a 10–60s brain game — Wordle, Tetris, Minesweeper, Sudoku, 2048, Math Blitz. Free solo; $3/mo for live Duels."
-                image="/coderot_mascot.png"
-                tags={["VS Code", "Next.js", "Games"]}
-                link="https://coderot.space"
-              />
-            </div>
           </div>
 
-          {/* Right column: Runyard.dev — col-span-7 */}
           <div className="md:col-span-7">
             <ProjectCard
               large={true}
@@ -181,6 +163,29 @@ const Index = () => {
               image="/runyard_logo.png"
               tags={["Next.js", "LLMs", "GPU", "Open Source"]}
               link="https://runyard.dev"
+            />
+          </div>
+
+          {/* Row 2 — Blockhub.dev (col-5) | Coderot.space (col-7) */}
+          <div className="md:col-span-5">
+            <ProjectCard
+              large={true}
+              title="Blockhub.dev"
+              description="A code editor built for blockchain developers. Generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other chains in seconds. Whether building DeFi protocols, NFTs, or dApps, Blockhub.dev cuts boilerplate and keeps you in flow with instant code suggestions."
+              image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
+              tags={["Solidity", "Next.js", "Web3.js", "Ethereum"]}
+              link="https://blockhub-mlbsadfef-nitinrajaofficialgmailcoms-projects.vercel.app/"
+            />
+          </div>
+
+          <div className="md:col-span-7">
+            <ProjectCard
+              large={true}
+              title="Coderot.space"
+              description="Stop doom scrolling while your AI writes code. Coderot interrupts each editor save with a 10–60 second brain game — Wordle, Tetris, Minesweeper, Sudoku, 2048, or Math Blitz — before handing control back. Compete live in Duels mode against other devs. Supports VS Code, Cursor, Windsurf, Claude Code, and more. Free solo games; Duels from $3/mo."
+              image="/coderot_mascot.png"
+              tags={["VS Code", "Next.js", "Games", "Developer Tools"]}
+              link="https://coderot.space"
             />
           </div>
 
