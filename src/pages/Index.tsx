@@ -1,24 +1,16 @@
 import React from 'react';
 import TechCard from '@/components/TechCard';
 import StatCard from '@/components/StatCard';
-import BlockchainButton from '@/components/BlockchainButton';
-import ContactButton from '@/components/ContactButton';
 import ProfileCard from '@/components/ProfileCard';
 import ProjectCard from '@/components/ProjectCard';
-import { 
-  Layers, 
-  Code, 
-  HardDrive, 
-  Triangle, 
-  FileCode, 
-  Anchor, 
-  Flag, 
-  SmilePlus, 
-  Timer, 
-  Mail, 
-  MessageCircle,
-  Briefcase,
-  Blocks
+import {
+  Layers,
+  Flag,
+  SmilePlus,
+  Timer,
+  Skull,
+  TrendingDown,
+  Flame
 } from 'lucide-react';
 import {SiSolidity} from "react-icons/si";
 import { SiWeb3Dotjs } from "react-icons/si";
@@ -35,6 +27,30 @@ import { SiSolana } from "react-icons/si";
 import { LuHexagon } from "react-icons/lu";
 import { SiBinance } from "react-icons/si";
 
+const failures = [
+  {
+    icon: <Skull size={20} className="text-blockchain-pink" />,
+    title: "DeFi Yield Protocol",
+    timeline: "2022 — 8 months",
+    what: "Built a cross-chain yield optimizer routing funds between Aave, Compound, and Curve. Launched a week before the Terra/LUNA collapse wiped 60% of DeFi TVL overnight.",
+    learned: "Market timing is not in your control. Ship faster, validate earlier.",
+  },
+  {
+    icon: <TrendingDown size={20} className="text-blockchain-pink" />,
+    title: "NFT Marketplace",
+    timeline: "2023 — 4 months",
+    what: "Spent 4 months building a curated NFT marketplace for indie artists. By launch, floor prices had cratered and gas fees made minting unviable for the target audience.",
+    learned: "Validate demand before building. A landing page would have told me in a week.",
+  },
+  {
+    icon: <Flame size={20} className="text-blockchain-pink" />,
+    title: "Over-Engineered SDK",
+    timeline: "2023 — 3 months",
+    what: "Abstracted a multi-chain wallet SDK with 40+ configuration options. No developer used it because the API surface was too complex. README ran to 8,000 words.",
+    learned: "Simplicity ships. If a dev needs to read 8,000 words, you failed the design.",
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen py-10 px-12 md:px-8 lg:px-24 max-w-5xl mx-auto">
@@ -48,7 +64,7 @@ const Index = () => {
               <span className="text-gray-300 text-sm flex items-center justify-center">My Stacks</span>
             </div>
             <h2 className="text-xxl font-bold mb-6 flex items-center justify-center ">Tech Arsenal</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <TechCard icon={<SiSolidity/>} name="Solidity" />
               <TechCard icon={<SiWeb3Dotjs />} name="Web3.js" />
@@ -60,35 +76,35 @@ const Index = () => {
               <TechCard icon={<FaAnchor />} name="Anchor" />
             </div>
           </div>
-          
+
           {/* Blockchains Explored Section */}
           <div className="bg-blockchain-card rounded-2xl p-3 border border-white/5 animate-fade-in">
             <div className="flex items-center justify-center gap-2 mb-5">
               <SiBlockchaindotcom size={20} className="text-blockchain-pink" />
               <h2 className="text-sm font-normal">Blockchains Explored</h2>
             </div>
-            
+
             <div className="flex flex-wrap items-center justify-center gap-2">
               <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
                 <SiBitcoinsv className="text-gray-300" />
                 <span  className="text-gray-300 font-mono">Bitcoin</span>
               </div>
-              
+
               <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
                   <FaEthereum className="text-gray-300 " />
                 <span className="text-gray-300 font-mono">Ethereum</span>
               </div>
-              
+
               <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
                 <SiSolana className="text-gray-300"/>
                 <span className="text-gray-300 font-mono">Solana</span>
               </div>
-              
+
               <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
                 <LuHexagon className="text-gray-300"/>
                 <span className="text-gray-300 font-mono">Polygon</span>
               </div>
-              
+
               <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
                 <SiBinance className="text-gray-300"/>
                 <span className="text-gray-300 font-mono">Binance</span>
@@ -96,7 +112,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Right Column */}
         <div className="lg:col-span-7 space-y-4">
           {/* Stats Row */}
@@ -105,9 +121,9 @@ const Index = () => {
             <StatCard number="10" label="Clients" icon={<SmilePlus size={18} className="text-blockchain-pink" />} />
             <StatCard number="03" label="Years" icon={<Timer size={18} className="text-blockchain-pink" />} />
           </div>
-          
+
           {/* Profile Card with multiple specialties */}
-          <ProfileCard 
+          <ProfileCard
             name="NitiN Raja"
             title="I'm a"
             specialties={[
@@ -126,45 +142,95 @@ const Index = () => {
       {/* Projects Section - Bento Grid */}
       <div className="mt-6 animate-fade-in delay-200">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-5 -mt-3">
-            <ProjectCard 
-              title="Blockchain Lottery System" 
-              description="Automated yield farming protocol that maximizes returns across multiple DeFi platforms."
-              tags={["Solidity", "JavaScript", "DeFi"]}
-              link="#"
+
+          {/* Snipe.Video — large card left */}
+          <div className="md:col-span-7">
+            <ProjectCard
+              large={true}
+              title="Snipe.Video"
+              description="The operating system for podcasters. Paste a YouTube link and get 10 viral clips ranked by Hook, Energy, and Sentiment scores. Repurpose AI generates Twitter threads, LinkedIn posts, and newsletters from transcripts. Guest Scout recommends guests from trending social topics. Auto-publishes across Instagram, YouTube, TikTok, X, and LinkedIn at optimal engagement times. Pay-per-credit — no subscriptions."
+              image="/snipe.png"
+              tags={["SaaS", "Next.js", "Razorpay", "Video"]}
+              link="https://snipe.video"
             />
           </div>
 
-          <div className="md:col-span-7 -mt-8">
-            <ProjectCard 
-              large={true}
-              title="Blockhub.dev" 
-              description="Blockhub.dev is a code editor designed specifically for blockchain developers. It helps you generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other blockchains in seconds. Whether you're building DeFi protocols, NFTs, or dApps, Blockhub.dev streamlines your development workflow with instant code suggestions and boilerplate generation."
-              image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
-              tags={["Solidity", "Next.js", "Web3.js", "Ethereum", "Wallet"]}
-              link="https://blockhub.dev"
-            />
-          </div>
-          
-          <div className="md:col-span-3 -mt-60">
-            <ProjectCard 
-              title="Blockhub-SDK" 
-              description="A software Development kit of Smart Contracts."
-              tags={["Solidity","Node.js"]}
+          {/* SDK + Wallet stacked right */}
+          <div className="md:col-span-5 flex flex-col gap-4">
+            <ProjectCard
+              title="Blockhub-SDK"
+              description="A software development kit of audited Smart Contracts. Drop-in Solidity modules for common DeFi and NFT patterns."
+              tags={["Solidity", "Node.js"]}
               link="https://blockhub.dev/smart-contracts"
             />
-          </div>
-          
-          <div className="md:col-span-2 -mt-60">
-            <ProjectCard 
-              title="Wallet" 
-              description="A wallet directory."
-              tags={["React", ]}
+            <ProjectCard
+              title="Wallet"
+              description="A curated wallet directory — compare features, chain support, and custody models across leading Web3 wallets."
+              tags={["React"]}
               link="https://blockhub.dev/wallets"
             />
           </div>
+
+          {/* Runyard.dev — large card left */}
+          <div className="md:col-span-5">
+            <ProjectCard
+              large={true}
+              title="Runyard.dev"
+              description="Find local LLMs that actually fit your machine. Enter your GPU and VRAM — Runyard detects compatibility across General, Code, Multimodal, Vision, Audio, Diffusion, and Agent models, then ranks them by estimated tokens per second. Use Anchor API to call multiple providers from one port. Browse AI Yard for guides and tooling. Free, hardware-aware, no sign-up."
+              image="/runyard_logo.png"
+              tags={["Next.js", "LLMs", "GPU", "Open Source"]}
+              link="https://runyard.dev"
+            />
+          </div>
+
+          {/* Blockhub.dev — large card right */}
+          <div className="md:col-span-7">
+            <ProjectCard
+              large={true}
+              title="Blockhub.dev"
+              description="A code editor built for blockchain developers. Generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other chains in seconds. Whether building DeFi protocols, NFTs, or dApps, Blockhub.dev cuts boilerplate and keeps you in flow with instant code suggestions."
+              image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
+              tags={["Solidity", "Next.js", "Web3.js", "Ethereum", "Wallet"]}
+              link="https://blockhub-mlbsadfef-nitinrajaofficialgmailcoms-projects.vercel.app/"
+            />
+          </div>
+
         </div>
       </div>
+
+      {/* Failure / Battle Scars Section */}
+      <div className="mt-10 animate-fade-in delay-300">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="h-px flex-1 bg-white/5" />
+          <h2 className="text-sm font-normal text-gray-500 tracking-widest uppercase">Battle Scars</h2>
+          <div className="h-px flex-1 bg-white/5" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {failures.map((f, i) => (
+            <div
+              key={i}
+              className="bg-blockchain-card rounded-2xl p-5 border border-white/5 flex flex-col gap-3"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {f.icon}
+                  <span className="text-gray-200 font-medium text-sm">{f.title}</span>
+                </div>
+                <span className="text-[10px] text-gray-600 font-mono">{f.timeline}</span>
+              </div>
+
+              <p className="text-gray-400 text-xs leading-relaxed">{f.what}</p>
+
+              <div className="border-t border-white/5 pt-3">
+                <span className="text-[10px] uppercase tracking-widest text-blockchain-pink font-mono">Lesson</span>
+                <p className="text-gray-300 text-xs mt-1 leading-relaxed">{f.learned}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 };
