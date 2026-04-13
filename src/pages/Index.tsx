@@ -143,7 +143,7 @@ const Index = () => {
       <div className="mt-6 animate-fade-in delay-200">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
-          {/* Row 1 — Snipe.Video (col-5) | Runyard.dev (col-7) */}
+          {/* Row 1 — Snipe.Video (col-5) | Coderot.space (col-7) */}
           <div className="md:col-span-5">
             <ProjectCard
               large={true}
@@ -158,15 +158,16 @@ const Index = () => {
           <div className="md:col-span-7">
             <ProjectCard
               large={true}
-              title="Runyard.dev"
-              description="Find local LLMs that actually fit your machine. Enter your GPU and VRAM — Runyard detects compatibility across General, Code, Multimodal, Vision, Audio, Diffusion, and Agent models, then ranks them by estimated tokens per second. Use Anchor API to call multiple providers from one port. Browse AI Yard for guides and tooling. Free, hardware-aware, no sign-up."
-              image="/runyard_logo.png"
-              tags={["Next.js", "LLMs", "GPU", "Open Source"]}
-              link="https://runyard.dev"
+              title="Coderot.space"
+              description="Stop doom scrolling while your AI writes code. Coderot interrupts each editor save with a 10–60 second brain game — Wordle, Tetris, Minesweeper, Sudoku, 2048, or Math Blitz — before handing control back. Compete live in Duels mode against other devs. Supports VS Code, Cursor, Windsurf, Claude Code, and more. Free solo games; Duels from $3/mo."
+              image="/coderot_mascot.png"
+              imageClassName="max-h-40"
+              tags={["VS Code", "Next.js", "Games", "Developer Tools"]}
+              link="https://coderot.space"
             />
           </div>
 
-          {/* Row 2 — Blockhub.dev (col-5) | Coderot.space (col-7) */}
+          {/* Row 2 — Blockhub.dev (col-5) | Runyard.dev (col-7) */}
           <div className="md:col-span-5">
             <ProjectCard
               large={true}
@@ -181,11 +182,11 @@ const Index = () => {
           <div className="md:col-span-7">
             <ProjectCard
               large={true}
-              title="Coderot.space"
-              description="Stop doom scrolling while your AI writes code. Coderot interrupts each editor save with a 10–60 second brain game — Wordle, Tetris, Minesweeper, Sudoku, 2048, or Math Blitz — before handing control back. Compete live in Duels mode against other devs. Supports VS Code, Cursor, Windsurf, Claude Code, and more. Free solo games; Duels from $3/mo."
-              image="/coderot_mascot.png"
-              tags={["VS Code", "Next.js", "Games", "Developer Tools"]}
-              link="https://coderot.space"
+              title="Runyard.dev"
+              description="Find local LLMs that actually fit your machine. Enter your GPU and VRAM — Runyard detects compatibility across General, Code, Multimodal, Vision, Audio, Diffusion, and Agent models, then ranks them by estimated tokens per second. Use Anchor API to call multiple providers from one port. Browse AI Yard for guides and tooling. Free, hardware-aware, no sign-up."
+              image="/runyard_logo.png"
+              tags={["Next.js", "LLMs", "GPU", "Open Source"]}
+              link="https://runyard.dev"
             />
           </div>
 

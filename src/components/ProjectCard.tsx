@@ -6,37 +6,39 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image?: string;
+  imageClassName?: string;
   tags: string[];
   link?: string;
   className?: string;
   large?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ 
-  title, 
-  description, 
-  image, 
-  tags, 
-  link, 
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  image,
+  imageClassName,
+  tags,
+  link,
   className,
   large = false
 }) => {
   return (
-    <a 
-      href={link || "#"} 
+    <a
+      href={link || "#"}
       className={cn(
         "block bg-blockchain-card rounded-2xl p-6 border border-white/5",
         large ? "col-span-1 md:col-span-2 row-span-1 md:row-span-2" : "",
         className
       )}
-      target="_blank" 
+      target="_blank"
       rel="noopener noreferrer"
     >
       {image && (
-        <div className="mb-4 overflow-hidden rounded-xl">
-          <img 
-            src={image} 
-            alt={title} 
+        <div className={cn("mb-4 overflow-hidden rounded-xl", imageClassName)}>
+          <img
+            src={image}
+            alt={title}
             className="w-full h-full object-cover"
           />
         </div>
