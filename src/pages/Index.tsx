@@ -10,15 +10,11 @@ import {
   Timer,
   Skull,
   TrendingDown,
-  Flame
+  Flame,
+  Database
 } from 'lucide-react';
-import { SiPython, SiPytorch, SiTensorflow, SiOpenai, SiLangchain, SiHuggingface, SiNextdotjs, SiBlockchaindotcom } from "react-icons/si";
+import { SiPython, SiPytorch, SiTensorflow, SiLangchain, SiHuggingface, SiNextdotjs } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import { SiBitcoinsv } from "react-icons/si";
-import { FaEthereum } from "react-icons/fa";
-import { SiSolana } from "react-icons/si";
-import { LuHexagon } from "react-icons/lu";
-import { SiBinance } from "react-icons/si";
 
 const failures = [
   {
@@ -52,19 +48,18 @@ const Index = () => {
         <div className="lg:col-span-5 space-y-4">
           {/* Tech Arsenal Section */}
           <div className="bg-blockchain-card rounded-2xl p-4 animate-fade-in border border-white/5">
-            <div className="flex items-center gap-2 mb-4 justify-center">
+            <div className="flex items-center gap-2 mb-6 justify-center">
               <Layers className="text-blockchain-pink" size={20} />
-              <span className="text-gray-300 text-sm flex items-center justify-center">My Stacks</span>
+              <h2 className="text-xl font-bold">My Tech Arsenal</h2>
             </div>
-            <h2 className="text-xxl font-bold mb-6 flex items-center justify-center ">Tech Arsenal</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <TechCard icon={<SiPython />} name="Python" />
               <TechCard icon={<SiPytorch />} name="PyTorch" />
               <TechCard icon={<SiTensorflow />} name="TensorFlow" />
-              <TechCard icon={<SiOpenai />} name="OpenAI" />
+              <TechCard icon={<Database size={16} />} name="Vector DB" />
               <TechCard icon={<SiLangchain />} name="LangChain" />
-              <TechCard icon={<SiHuggingface />} name="Hugging Face" />
+              <TechCard icon={<SiHuggingface />} name="Hugging" />
               <TechCard icon={<SiNextdotjs />} name="Next.js" />
               <TechCard icon={<FaReact />} name="React.js" />
             </div>
@@ -73,41 +68,22 @@ const Index = () => {
           {/* Blockchains Explored Section */}
           <div className="bg-blockchain-card rounded-2xl p-3 border border-white/5 animate-fade-in">
             <div className="flex items-center justify-center gap-2 mb-5">
-              <SiBlockchaindotcom size={20} className="text-blockchain-pink" />
-              <h2 className="text-sm font-normal">Blockchains Explored</h2>
+              <Layers size={20} className="text-blockchain-pink" />
+              <h2 className="text-sm font-normal">AI Architectures Explored</h2>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                <SiBitcoinsv className="text-gray-300" />
-                <span  className="text-gray-300 font-mono">Bitcoin</span>
-              </div>
-
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                  <FaEthereum className="text-gray-300 " />
-                <span className="text-gray-300 font-mono">Ethereum</span>
-              </div>
-
-              <div className="flex items-center gap-2 bg-[#141414] px-1 py-1 rounded-xl border border-white/5">
-                <SiSolana className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Solana</span>
-              </div>
-
-              <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
-                <LuHexagon className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Polygon</span>
-              </div>
-
-              <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
-                <SiBinance className="text-gray-300"/>
-                <span className="text-gray-300 font-mono">Binance</span>
-              </div>
+              {["Transformers", "Diffusion", "RL", "SFT", "RAG", "Distillation"].map((arch) => (
+                <div key={arch} className="flex items-center bg-[#141414] px-3 py-1 rounded-xl border border-white/5">
+                  <span className="text-gray-300 font-mono text-xs">{arch}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="lg:col-span-7 space-y-4">
+        <div className="lg:col-span-7 space-y-4 order-first lg:order-none">
           {/* Stats Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 animate-fade-in  border border-white/5">
             <StatCard number="07" label="Projects" icon={<Flag size={18} className="text-blockchain-pink " />} />
@@ -120,7 +96,7 @@ const Index = () => {
             name="NitiN Raja"
             title="I'm a"
             specialties={[
-              "Fullstack Blockchain Dev",
+              "Fullstack AI Dev",
               "Micro-Saas Founder",
               "Curious Product Designer",
             ]}
@@ -137,7 +113,7 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
           {/* Row 1 — Snipe.Video (col-5) | Runyard.dev (col-7) */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 md:-mt-[0.7cm]">
             <ProjectCard
               large={true}
               title="Snipe.Video"
@@ -150,7 +126,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="md:col-span-7 md:-mt-[1cm]">
+          <div className="md:col-span-7 md:-mt-[0.1cm]">
             <ProjectCard
               large={true}
               title="Runyard.dev"
@@ -162,7 +138,7 @@ const Index = () => {
           </div>
 
           {/* Row 2 — Blockhub.dev (col-5) | Coderot.space (col-7) */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 md:-mt-[0.6cm]">
             <ProjectCard
               large={true}
               title="Blockhub.dev"
@@ -173,7 +149,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="md:col-span-7 md:-mt-[1cm]">
+          <div className="md:col-span-7 md:-mt-[0.1cm]">
             <ProjectCard
               large={true}
               title="Coderot.space"
