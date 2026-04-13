@@ -143,8 +143,8 @@ const Index = () => {
       <div className="mt-6 animate-fade-in delay-200">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
-          {/* Snipe.Video — large card left */}
-          <div className="md:col-span-7">
+          {/* Snipe.Video — col-span-5 */}
+          <div className="md:col-span-5">
             <ProjectCard
               large={true}
               title="Snipe.Video"
@@ -155,24 +155,8 @@ const Index = () => {
             />
           </div>
 
-          {/* SDK + Wallet stacked right */}
-          <div className="md:col-span-5 flex flex-col gap-4">
-            <ProjectCard
-              title="Blockhub-SDK"
-              description="A software development kit of audited Smart Contracts. Drop-in Solidity modules for common DeFi and NFT patterns."
-              tags={["Solidity", "Node.js"]}
-              link="https://blockhub.dev/smart-contracts"
-            />
-            <ProjectCard
-              title="Wallet"
-              description="A curated wallet directory — compare features, chain support, and custody models across leading Web3 wallets."
-              tags={["React"]}
-              link="https://blockhub.dev/wallets"
-            />
-          </div>
-
-          {/* Runyard.dev — large card left */}
-          <div className="md:col-span-5">
+          {/* Runyard.dev — col-span-7 */}
+          <div className="md:col-span-7">
             <ProjectCard
               large={true}
               title="Runyard.dev"
@@ -183,8 +167,8 @@ const Index = () => {
             />
           </div>
 
-          {/* Blockhub.dev — large card right */}
-          <div className="md:col-span-7">
+          {/* Blockhub.dev — full width */}
+          <div className="md:col-span-12">
             <ProjectCard
               large={true}
               title="Blockhub.dev"
