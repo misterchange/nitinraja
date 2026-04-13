@@ -52,25 +52,24 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           </div>
           
           <div className="flex-1">
-            <div className="flex mb-3 md:mb-0">
-              <div className="flex items-center gap-3 bg-[#141414] px-3 py-1.5 rounded-xl border border-white/5 w-fit">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                <span className="text-gray-300 text-sm">Building next-gen AI products</span>
+            <div className="flex flex-col md:flex-row md:items-center justify-between">
+              <div className="flex items-center gap-3 mb-3 md:mb-0 bg-[#141414] px-2 py-1 rounded-xl border border-white/5">
+                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <span className="text-gray-300 text-sm">Available to work</span>
               </div>
-            </div>
-            
-            <div className="flex items-center gap-4 mt-3 mb-2">
-              <h1 className="text-3xl font-semibold">{name}</h1>
+              
               <a 
                 href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex bg-[#141414] px-3 py-1.5 rounded-xl border border-white/5 items-center gap-2 text-gray-300 hover:text-white transition-colors w-fit"
+                className="flex bg-[#141414] px-2 py-1 rounded-xl border border-white/5 items-center gap-2 text-gray-300 hover:text-white transition-colors"
               >
-                <span className="font-medium text-sm">Resume</span>
-                <Download size={16} />
+                <span className="font-medium">Resume</span>
+                <Download size={18} />
               </a>
             </div>
+            
+            <h1 className="text-3xl font-semibold mt-2 mb-2">{name}</h1>
             
             <p className="text-xl mb-4">
               {title} <span className="pink-accent">
@@ -102,9 +101,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
         <div className="flex justify-between items-center gap-3 mt-0">
           <a 
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=nitinrajaofficial@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:your.email@example.com"
             className="flex-1 flex items-center gap-3 bg-[#141414] px-2 py-1 rounded-xl border border-white/5 text-gray-300 hover:text-white transition-colors"
           >
             <div className="bg-[#1a1a1a] p-3 rounded-lg">
@@ -114,7 +111,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           </a>
           
           <a 
-            href="https://wa.me/918104745212"
+            href="https://wa.me/your-number"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center gap-3 bg-[#141414] px-2 py-1 rounded-xl border border-white/5 text-gray-300 hover:text-white transition-colors"
