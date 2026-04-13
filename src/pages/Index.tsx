@@ -139,9 +139,9 @@ const Index = () => {
             <ProjectCard 
               large={true}
               title="Blockhub.dev" 
-              description="Blockhub.dev is an AI-powered code editor designed specifically for blockchain developers. It helps you generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other blockchains in seconds. Whether you're building DeFi protocols, NFTs, or dApps, Blockhub.dev streamlines your development workflow with instant AI-driven code suggestions and boilerplate generation."
+              description="Blockhub.dev is a code editor designed specifically for blockchain developers. It helps you generate smart contracts, deploy Web3 applications, and integrate with Ethereum, Solana, and other blockchains in seconds. Whether you're building DeFi protocols, NFTs, or dApps, Blockhub.dev streamlines your development workflow with instant code suggestions and boilerplate generation."
               image="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2070&auto=format&fit=crop"
-              tags={["AI","Solidity", "Next.js", "Web3.js", "Ethereum","Wallet"]}
+              tags={["Solidity", "Next.js", "Web3.js", "Ethereum", "Wallet"]}
               link="https://blockhub.dev"
             />
           </div>
