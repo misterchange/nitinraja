@@ -178,7 +178,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="md:col-span-7">
+          <div className="md:col-span-7 md:-mt-[6cm]">
             <ProjectCard
               large={true}
               title="Coderot.space"
