@@ -15,9 +15,10 @@ import {
   Github,
   Rocket,
   Zap,
-  Lock
+  Lock,
+  Plug
 } from 'lucide-react';
-import { SiPython, SiPytorch, SiTensorflow, SiLangchain, SiHuggingface, SiNextdotjs } from "react-icons/si";
+import { SiPython, SiPytorch, SiTensorflow, SiLangchain, SiNextdotjs } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 
 const failures = [
@@ -63,7 +64,7 @@ const Index = () => {
               <TechCard icon={<SiTensorflow />} name="TensorFlow" />
               <TechCard icon={<Database size={16} />} name="Vector DB" />
               <TechCard icon={<SiLangchain />} name="LangChain" />
-              <TechCard icon={<SiHuggingface />} name="Hugging" />
+              <TechCard icon={<Plug size={16} />} name="MCPs" />
               <TechCard icon={<SiNextdotjs />} name="Next.js" />
               <TechCard icon={<FaReact />} name="React.js" />
             </div>
