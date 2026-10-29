@@ -123,7 +123,7 @@ const Index = () => {
               large={true}
               title="Snipe.Video"
               description="The operating system for podcasters. Paste a YouTube link and get 10 viral clips ranked by Hook, Energy, and Sentiment scores. Repurpose AI generates Twitter threads, LinkedIn posts, and newsletters from transcripts. Guest Scout recommends guests from trending social topics. Auto-publishes across Instagram, YouTube, TikTok, X, and LinkedIn at optimal engagement times. Pay-per-credit — no subscriptions."
-              image="/snipe.png"
+              image={`${import.meta.env.BASE_URL}snipe.png`}
               imageClassName="h-36 overflow-hidden"
               imgClassName="scale-[2] object-contain"
               tags={["SaaS", "Next.js", "Razorpay", "Video"]}
@@ -136,7 +136,7 @@ const Index = () => {
               large={true}
               title="Runyard.dev"
               description="Find local LLMs that actually fit your machine. Enter your GPU and VRAM — Runyard detects compatibility across General, Code, Multimodal, Vision, Audio, Diffusion, and Agent models, then ranks them by estimated tokens per second. Use Anchor API to call multiple providers from one port. Browse AI Yard for guides and tooling. Free, hardware-aware, no sign-up."
-              image="/runyard_logo.png"
+              image={`${import.meta.env.BASE_URL}runyard_logo.png`}
               tags={["Next.js", "LLMs", "GPU", "Open Source"]}
               link="https://runyard.dev"
             />
@@ -205,7 +205,7 @@ const Index = () => {
               large={true}
               title="Coderot.space"
               description="Stop doom scrolling while your AI writes code. Coderot interrupts each editor save with a 10–60 second brain game — Wordle, Tetris, Minesweeper, Sudoku, 2048, or Math Blitz — before handing control back. Compete live in Duels mode against other devs. Supports VS Code, Cursor, Windsurf, Claude Code, and more. Free solo games; Duels from $3/mo."
-              image="/coderot_mascot.png"
+              image={`${import.meta.env.BASE_URL}coderot_mascot.png`}
               tags={["VS Code", "Next.js", "Games", "Developer Tools"]}
               link="https://coderot.space"
             />

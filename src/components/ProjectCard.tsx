@@ -14,6 +14,22 @@ interface ProjectCardProps {
   large?: boolean;
 }
 
+const resolveImage = (src?: string) => {
+  if (!src) return undefined;
+  if (
+    src.startsWith('http://') ||
+    src.startsWith('https://') ||
+    src.startsWith('//') ||
+    src.startsWith('data:')
+  ) {
+    return src;
+  }
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanSrc = src.startsWith('/') ? src.slice(1) : src;
+  return `${cleanBase}${cleanSrc}`;
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
@@ -25,6 +41,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   className,
   large = false
 }) => {
+  const resolvedSrc = resolveImage(image);
+
   return (
     <a
       href={link || "#"}
@@ -36,10 +54,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       target="_blank"
       rel="noopener noreferrer"
     >
-      {image && (
+      {resolvedSrc && (
         <div className={cn("mb-4 overflow-hidden rounded-xl", imageClassName)}>
           <img
-            src={image}
+            src={resolvedSrc}
             alt={title}
             className={cn("w-full h-full object-cover", imgClassName)}
           />
